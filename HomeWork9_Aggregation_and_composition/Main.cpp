@@ -124,6 +124,14 @@ int main() {
 		<< P.NameArmor() << "\033[0m\nWeight of things on the player is \033[93m" << P.Weight() << "\033[0m\nThe player can carry \033[93m"	<< P.WeightGain() \
 		<< "\033[0m kg and has damage resistance \033[93m" << P.Resistance() << "\033[0m"  << std::endl;
 	
+	// Чистим память от глобальных динамических массивов и переводи указатели на нейтральные статусы
+	delete[]darr_weapon;
+	darr_weapon = nullptr;
+	delete[]darr_headdress;
+	darr_headdress = nullptr;
+	delete[]darr_armor;
+	darr_armor = nullptr;
+
 	return 0;
 }
 

@@ -18,6 +18,7 @@ public:
 		this->max_weight_ = max_weight;
 		this->money_ = 1000;
 	}
+	~Player() {}
 	/// \brief Метод, дающий игроку в руки оружие (Заполнение слота "Оружие")
 	void SetWeapon(std::string name_weapon, double weight, double damage, int capasity) {
 		hands.SetWeapon(name_weapon,weight,damage,capasity);
@@ -82,6 +83,7 @@ private:
 	class Hands {
 	public:
 		Hands() :name_("hands"), weight_(0), damage_(1), capacity_(35000){} // Конструктор по умолчанию (в слоте "Руки игрока" просто руки игрока)				
+		~Hands() {}
 		/// \brief Сэттэр параметров объекта "Руки игрока" (Руки игрока приобретают св-ва оружия, параметры которого пареданы в сэттэр)
 		void SetWeapon(std::string name, double weight, double damage, int capasity) {
 			this->capacity_ = capasity;
@@ -117,6 +119,7 @@ private:
 	class Head {
 	public:
 		Head():name_("head"),weight_(0),resistance_damage_(0) {} // Конструктор по умолчанию (в слоте "Головной убор" просто головы игрока)	
+		~Head() {}
 		/// \brief Сэттэр параметров объекта "Голова" (Голова игрока приобретает св-ва головного убора, параметры которого пареданы в сэттэр)
 		void SetHeaddress(std::string name, double weight, double resistance) {
 			this->name_ = name;
@@ -151,6 +154,7 @@ private:
 	class Body {
 	public:
 		Body():name_("body"), resistance_damage_(0), weight_gain_(0), weight_(0) {} // Конструктор по умолчанию (в слоте "Броня" просто тело игрока)	
+		~Body() {}
 		/// \brief Сэттэр параметров объекта "Ntkj" (Тело игрока приобретает св-ва брони, параметры которого пареданы в сэттэр)
 		void SetArmor(std::string name, double resistent, double weigth, int weight_gain) {
 			this->resistance_damage_ = resistent;
